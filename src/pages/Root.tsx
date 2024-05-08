@@ -1,10 +1,13 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import MainHeader from "../components/Navigation/MainHeader.tsx";
 
 export default function Root() {
   return (
     <>
-      {/* Todo: Add Header */}
-      <Outlet />
+      <MainHeader />
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }
