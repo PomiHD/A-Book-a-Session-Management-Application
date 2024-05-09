@@ -1,24 +1,14 @@
-﻿type Session = {
-  id: string;
-  title: string;
-  summary: string;
-  description: string;
-  duration: number;
-  date: string;
-  image: string;
-};
+﻿import { SessionItem, SessionItemProps } from "./SessionItem.tsx";
+
 type SessionsListProps = {
-  sessions: Session[];
+  sessions: SessionItemProps[];
 };
 function SessionsList({ sessions }: SessionsListProps) {
   return (
-    <ul className={"sessions-list"}>
+    <ul id={"sessions-list"}>
       {sessions.map((session) => (
         <li key={session.id}>
-          <img src={`${session.image}`} alt={session.title} />
-          <h2>{session.title}</h2>
-          <p>{session.summary}</p>
-          <button>Learn more</button>
+          <SessionItem {...session} />
         </li>
       ))}
     </ul>
