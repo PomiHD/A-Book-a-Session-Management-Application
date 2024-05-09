@@ -1,4 +1,6 @@
-﻿export type SessionItemProps = {
+﻿import Button from "../UI/Button.tsx";
+
+export type SessionItemProps = {
   id: string;
   title: string;
   summary: string;
@@ -12,7 +14,7 @@ export function SessionItem({ id, title, summary, image }: SessionItemProps) {
       <div className={"session-data"}>
         <h2>{title}</h2>
         <p>{summary}</p>
-        <button>Learn more</button>
+        <Button to={id}>Learn more</Button>
       </div>
     </article>
   );
