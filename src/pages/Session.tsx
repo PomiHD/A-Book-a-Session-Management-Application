@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { SESSIONS } from "../dummy-sessions.ts";
 import Button from "../components/UI/Button.tsx";
 import { useEffect, useRef, useState } from "react";
+import Input from "../components/UI/Input.tsx";
 
 export default function SessionPage() {
   const [isBooking, setIsBooking] = useState(false);
@@ -41,14 +42,8 @@ export default function SessionPage() {
       {isBooking && (
         <dialog ref={dialog}>
           <h2>Book Session</h2>
-          <div className="control">
-            <label htmlFor={"name"}>{"Your Email"}</label>
-            <input id={"name"} name={"name"} required />
-          </div>
-          <div className="control">
-            <label htmlFor={"email"}>{"Your Email"}</label>
-            <input id={"email"} name={"email"} required />
-          </div>
+          <Input label={"Your name"} id={"name"} type={"text"} required />
+          <Input label={"Your email"} id={"email"} type={"email"} required />
           <div className="actions">
             <Button type="button" onClick={handelStopBooking}>
               Cancel
