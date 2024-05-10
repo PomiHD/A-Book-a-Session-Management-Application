@@ -2,12 +2,11 @@ import { useParams } from "react-router-dom";
 
 import { SESSIONS } from "../dummy-sessions.ts";
 import Button from "../components/UI/Button.tsx";
-import { useEffect, useRef, useState } from "react";
-import Input from "../components/UI/Input.tsx";
+import { useState } from "react";
+import BookSession from "../components/Sessions/BookSession.tsx";
 
 export default function SessionPage() {
   const [isBooking, setIsBooking] = useState(false);
-  const dialog = useRef<HTMLDialogElement>(null);
 
   const params = useParams<{ id: string }>();
 
@@ -28,29 +27,11 @@ export default function SessionPage() {
       </main>
     );
   }
-  useEffect(() => {
-    const modal = dialog.current;
-    if (isBooking) {
-      // @ts-ignore
-      modal.showModal();
-    }
-    return () => modal?.close();
-  }, [isBooking]);
 
   return (
     <main id="session-page">
       {isBooking && (
-        <dialog ref={dialog}>
-          <h2>Book Session</h2>
-          <Input label={"Your name"} id={"name"} type={"text"} required />
-          <Input label={"Your email"} id={"email"} type={"email"} required />
-          <div className="actions">
-            <Button type="button" onClick={handelStopBooking}>
-              Cancel
-            </Button>
-            <Button>Confirm</Button>
-          </div>
-        </dialog>
+        <BookSession isBooking={isBooking} onClose={handelStopBooking} />
       )}
       <article>
         <header>
