@@ -21,6 +21,7 @@ export default function BookSession({ onDone }: BookSessionProps) {
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData);
     console.log(data);
+    onDone();
   }
 
   return (

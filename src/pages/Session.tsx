@@ -18,6 +18,7 @@ export default function SessionPage() {
     setIsBooking(true);
   }
   function handelStopBooking() {
+    console.log("Stop booking...");
     setIsBooking(false);
   }
   if (!loadedSession) {
