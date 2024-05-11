@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from "react";
+﻿import { FormEvent, useEffect, useRef } from "react";
 import Input from "../UI/Input.tsx";
 import Button from "../UI/Button.tsx";
 import Modal, { ModalHandle } from "../UI/Modal.tsx";
@@ -16,9 +16,16 @@ export default function BookSession({ onDone }: BookSessionProps) {
     }
   }, []);
 
+  function handelSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+  }
+
   return (
     <Modal onClose={onDone} ref={modal}>
-      <form>
+      <form onSubmit={handelSubmit}>
         <h2>Book Session</h2>
         <Input label={"Your name"} id={"name"} type={"text"} required />
         <Input label={"Your email"} id={"email"} type={"email"} required />
