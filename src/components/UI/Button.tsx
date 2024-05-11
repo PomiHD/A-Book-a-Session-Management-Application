@@ -6,7 +6,12 @@ type BaseProps = {
   textOnly?: string;
 };
 
-type ButtonProps = ComponentPropsWithoutRef<"button"> & BaseProps;
+// https://stackoverflow.com/questions/65805600/what-does-to-never-mean-in-typescript
+// By setting to?: never in ButtonProps,
+// TypeScript will give a compile error if you try to provide a 'to' prop when you are using the Button component as a button.
+// This helps to ensure that you are using the Button component correctly.
+type ButtonProps = ComponentPropsWithoutRef<"button"> &
+  BaseProps & { to?: never };
 
 type ButtonLinkProps = LinkProps &
   BaseProps & {
