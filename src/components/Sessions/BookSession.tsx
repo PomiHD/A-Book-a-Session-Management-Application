@@ -4,26 +4,26 @@ import Button from "../UI/Button.tsx";
 import Modal, { ModalHandle } from "../UI/Modal.tsx";
 
 type BookSessionProps = {
-  onClose: () => void;
+  onDone: () => void;
 };
 
-export default function BookSession({ onClose }: BookSessionProps) {
-  const modalRef = useRef<ModalHandle>(null);
+export default function BookSession({ onDone }: BookSessionProps) {
+  const modal = useRef<ModalHandle>(null);
 
   useEffect(() => {
-    if (modalRef.current) {
-      modalRef.current.open();
+    if (modal.current) {
+      modal.current.open();
     }
   }, []);
 
   return (
-    <Modal onClose={onClose} ref={modalRef}>
+    <Modal onClose={onDone} ref={modal}>
       <form>
         <h2>Book Session</h2>
         <Input label={"Your name"} id={"name"} type={"text"} required />
         <Input label={"Your email"} id={"email"} type={"email"} required />
         <div className="actions">
-          <Button type="button" onClick={onClose}>
+          <Button type="button" textOnly onClick={onDone}>
             Cancel
           </Button>
           <Button>Confirm</Button>

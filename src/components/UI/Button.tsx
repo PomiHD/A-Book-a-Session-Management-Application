@@ -3,7 +3,7 @@ import { Link, type LinkProps } from "react-router-dom";
 
 type BaseProps = {
   children: ReactNode;
-  textOnly?: string;
+  textOnly?: boolean;
 };
 
 // https://stackoverflow.com/questions/65805600/what-does-to-never-mean-in-typescript
