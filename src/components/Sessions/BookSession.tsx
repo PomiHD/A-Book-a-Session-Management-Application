@@ -22,12 +22,12 @@ export default function BookSession({ onDone }: BookSessionProps) {
         <h2>Book Session</h2>
         <Input label={"Your name"} id={"name"} type={"text"} required />
         <Input label={"Your email"} id={"email"} type={"email"} required />
-        <div className="actions">
+        <p className="actions">
           <Button type="button" textOnly onClick={onDone}>
             Cancel
           </Button>
           <Button>Confirm</Button>
-        </div>
+        </p>
       </form>
     </Modal>
   );
