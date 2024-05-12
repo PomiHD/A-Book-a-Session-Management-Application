@@ -1,4 +1,4 @@
-﻿import { FormEvent, useEffect, useRef } from "react";
+﻿import { type FormEvent, useEffect, useRef } from "react";
 import Input from "../UI/Input.tsx";
 import Button from "../UI/Button.tsx";
 import Modal, { ModalHandle } from "../UI/Modal.tsx";

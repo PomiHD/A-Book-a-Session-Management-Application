@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-
 import { SESSIONS } from "../dummy-sessions.ts";
 import Button from "../components/UI/Button.tsx";
 import { useState } from "react";
