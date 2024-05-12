@@ -2,13 +2,16 @@
 import Input from "../UI/Input.tsx";
 import Button from "../UI/Button.tsx";
 import Modal, { ModalHandle } from "../UI/Modal.tsx";
+import { Session, useSessionsContext } from "../store/sessions-context.tsx";
 
 type BookSessionProps = {
+  session: Session;
   onDone: () => void;
 };
 
-export default function BookSession({ onDone }: BookSessionProps) {
+export default function BookSession({ session, onDone }: BookSessionProps) {
   const modal = useRef<ModalHandle>(null);
+  const { addSession } = useSessionsContext();
 
   useEffect(() => {
     if (modal.current) {
@@ -20,7 +23,8 @@ export default function BookSession({ onDone }: BookSessionProps) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData);
-    console.log(data);
+    console.log(data); // would normally be sent to a server, together with session data
+    addSession(session);
     onDone();
   }
 
