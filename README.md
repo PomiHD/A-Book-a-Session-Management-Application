@@ -1,5 +1,6 @@
 # A Book a Session Management Application
-
+## Demo
+![](./src/demo/demo.gif)
 ## Introduction
 This application facilitates session management and booking processes, utilizing a modern React TypeScript framework. Designed for both small and large-scale needs, it provides a robust and user-friendly interface for managing schedules and sessions effectively.
 
