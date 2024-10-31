@@ -1,15 +1,15 @@
 ﻿import Modal, { ModalHandle } from "../UI/Modal.tsx";
-import { useSessionsContext } from "../store/sessions-context.tsx";
 import { ReactNode, useEffect, useRef } from "react";
 import UpcomingSession from "./UpcomingSession.tsx";
 import Button from "../UI/Button.tsx";
+import useSession from "../../hook/useSession.tsx";
 
 type UpcomingSessionsProps = {
   onClose: () => void; // onClose is accepted to "tell" the parent component that the UpcomingSessions component should be removed from the DOM
 };
 export default function UpcomingSessions({ onClose }: UpcomingSessionsProps) {
   const modal = useRef<ModalHandle>(null);
-  const { upcomingSessions, deleteSession } = useSessionsContext();
+  const { upcomingSessions, deleteSession } = useSession();
 
   useEffect(() => {
     if (modal.current) {

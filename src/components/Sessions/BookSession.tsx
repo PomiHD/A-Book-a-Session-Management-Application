@@ -2,7 +2,8 @@
 import Input from "../UI/Input.tsx";
 import Button from "../UI/Button.tsx";
 import Modal, { ModalHandle } from "../UI/Modal.tsx";
-import { Session, useSessionsContext } from "../store/sessions-context.tsx";
+import useSession from "../../hook/useSession.tsx";
+import {Session} from "../../types/session.ts";
 
 type BookSessionProps = {
   session: Session;
@@ -11,7 +12,7 @@ type BookSessionProps = {
 
 export default function BookSession({ session, onDone }: BookSessionProps) {
   const modal = useRef<ModalHandle>(null);
-  const { addSession } = useSessionsContext();
+  const { addSession } = useSession();
 
   useEffect(() => {
     if (modal.current) {
