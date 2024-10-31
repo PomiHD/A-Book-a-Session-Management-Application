@@ -1,9 +1,8 @@
-﻿import { type FormEvent, useEffect, useRef } from "react";
-import Input from "../UI/Input.tsx";
-import Button from "../UI/Button.tsx";
-import Modal, { ModalHandle } from "../UI/Modal.tsx";
+﻿import { type FormEvent, useState, useEffect } from "react";
+import { Box, TextField, Button } from "@mui/material";
+import Modal from "../UI/Modal.tsx";
 import useSession from "../../hook/useSession.tsx";
-import {Session} from "../../types/session.ts";
+import { Session } from "../../types/session.ts";
 
 type BookSessionProps = {
   session: Session;
@@ -11,16 +10,14 @@ type BookSessionProps = {
 };
 
 export default function BookSession({ session, onDone }: BookSessionProps) {
-  const modal = useRef<ModalHandle>(null);
+  const [open, setOpen] = useState(false);
   const { addSession } = useSession();
 
   useEffect(() => {
-    if (modal.current) {
-      modal.current.open();
-    }
+    setOpen(true);
   }, []);
 
-  function handelSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData);
@@ -30,18 +27,27 @@ export default function BookSession({ session, onDone }: BookSessionProps) {
   }
 
   return (
-    <Modal onClose={onDone} ref={modal}>
-      <form onSubmit={handelSubmit}>
-        <h2>Book Session</h2>
-        <Input label={"Your name"} id={"name"} type={"text"} required />
-        <Input label={"Your email"} id={"email"} type={"email"} required />
-        <p className="actions">
-          <Button type="button" textOnly onClick={onDone}>
-            Cancel
-          </Button>
-          <Button>Confirm</Button>
-        </p>
-      </form>
-    </Modal>
+      <Modal open={open} onClose={onDone} title="Book Session">
+        <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 2,
+              width: '500px',
+              margin: '0 auto',
+              padding: 2,
+              boxSizing: 'border-box',
+            }}
+        >
+          <TextField sx={{background: "white"}} label="Your name" id="name" name="name" type="text" required fullWidth />
+          <TextField sx={{background: "white"}} label="Your email" id="email" name="email" type="email" required fullWidth />
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Button type="button" onClick={onDone} variant="outlined">Cancel</Button>
+            <Button type="submit" variant="contained">Confirm</Button>
+          </Box>
+        </Box>
+      </Modal>
   );
 }

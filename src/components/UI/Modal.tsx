@@ -1,33 +1,31 @@
-﻿import { forwardRef, type ReactNode, useImperativeHandle, useRef } from "react";
-
-export type ModalHandle = {
-  open: () => void;
-};
+﻿import { type ReactNode } from "react";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from "@mui/material/DialogTitle";
+import Button from "@mui/material/Button";
 
 type ModalProps = {
-  onClose: () => void;
-  children: ReactNode;
+    open: boolean;
+    onClose: () => void;
+    children: ReactNode;
+    title: string;
 };
 
-const Modal = forwardRef<ModalHandle, ModalProps>(function Modal(
-  { onClose, children },
-  ref,
-) {
-  const dialog = useRef<HTMLDialogElement>(null);
-
-  useImperativeHandle(ref, () => ({
-    open() {
-      if (dialog.current) {
-        dialog.current.showModal();
-      }
-    },
-  }));
-
-  return (
-    <dialog ref={dialog} className={"modal"} onClose={onClose}>
-      {children}
-    </dialog>
-  );
-});
+const Modal = ({ open, onClose, children, title }: ModalProps) => {
+    return (
+        <Dialog
+            open={open}
+            onClose={onClose}
+            sx={{ '& .MuiDialog-paper': { backgroundColor: '#3f3a46' } }}
+        >
+            <DialogTitle>{title}</DialogTitle>
+            <DialogContent>{children}</DialogContent>
+            <DialogActions>
+                <Button onClick={onClose}>Close</Button>
+            </DialogActions>
+        </Dialog>
+    );
+};
 
 export default Modal;
