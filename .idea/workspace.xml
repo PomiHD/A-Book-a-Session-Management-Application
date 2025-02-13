@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f3b14bcf-7d5d-4299-a4b2-2f6822d3266f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/prop-types/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/prop-types/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/prop-types/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/prop-types/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/prop-types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/prop-types/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/prop-types/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/prop-types/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sessions/BookSession.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sessions/BookSession.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sessions/UpcomingSessions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sessions/UpcomingSessions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/Modal.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,19 +38,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\dev\\A-Book-a-Session-Management-Application\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "ts.external.directory.path": "C:\\devs\\A-Book-a-Session-Management-Application\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true",
+    "zielu.gittoolbox.prj.config.selected.tab.id": "zielu.gittoolbox.config.shared.autoFetch"
   }
-}</component>
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -93,6 +95,8 @@
       <workItem from="1730355461699" duration="47000" />
       <workItem from="1730355553957" duration="4781000" />
       <workItem from="1730360582444" duration="2925000" />
+      <workItem from="1739466052407" duration="914000" />
+      <workItem from="1739467114886" duration="539000" />
     </task>
     <task id="LOCAL-00001" summary="fixed bugs.">
       <option name="closed" value="true" />
@@ -125,5 +129,9 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fixed bugs." />
     <option name="LAST_COMMIT_MESSAGE" value="fixed bugs." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
